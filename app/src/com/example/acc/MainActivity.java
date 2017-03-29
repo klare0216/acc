@@ -19,6 +19,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -104,22 +105,39 @@ public class MainActivity extends Activity {
 		button_2.setOnClickListener(new Button.OnClickListener(){
 			 @Override 
 	         public void onClick(View v) {
-	             if(start){
-	            	 start = false;
-	            	 time = 0;
-	            	 button_2.setText("START");
-	            	 button_2.setBackgroundResource(R.drawable.button_bg);
-	            	 //generate_data();
-	            	 save();
-	             }else {
-	            	 start = true;
-	            	 button_2.setText("SAVE");
-	            	 button_2.setBackgroundResource(R.drawable.button_bg_save);
-	             }
+	 
 			 }
 	            
 		});
+		  button_2.setOnTouchListener(new View.OnTouchListener() {
+			     @Override
+			     public boolean onTouch(View v, MotionEvent event) {
+			        if(event.getAction() == MotionEvent.ACTION_DOWN) {
+			        	if(!start) {
+			            	 button_2.setText("SAVE");
+			            	 button_2.setBackgroundResource(R.drawable.button_bg_save);
+			             }
+			        	return true;
+			        } else if (event.getAction() == MotionEvent.ACTION_UP) {
+			            if(start){
+			            	 start = false;
+			            	 time = 0;
+			            	 button_2.setText("START");
+			            	 button_2.setBackgroundResource(R.drawable.button_bg);
+			            	 //generate_data();
+			            	 save();
+			             }else{
+			            	 start = true;
+			             }
+			        	return true;
+			        }
+			        return false;
+			     }
+		  
+		  });
 	}
+	
+	
 	
 	private void save(){
 		write();
@@ -187,6 +205,7 @@ public class MainActivity extends Activity {
 		}
 		
 	}
+	
 	// 拿來寫入檔案
 	private void write(){
 		try{
@@ -203,6 +222,7 @@ public class MainActivity extends Activity {
 			 
 			 log.append("平均: "+averange_data()+"\n");
 			 String tmp ="中位數: "+median()+"\n";
+			 log.append(tmp);
 			 output.write(tmp.getBytes());
 			 
 			 while(output_dat.size() != 0){
@@ -282,7 +302,7 @@ public class MainActivity extends Activity {
 		super.onResume();
 		sensorMgr.registerListener(listener,
 				sensorMgr.getDefaultSensor(Sensor.TYPE_ACCELEROMETER),
-				20);
+				10000);
 		dsec = 20;
 		sensorMgr.registerListener(listener_G,
 				sensorMgr.getDefaultSensor(Sensor.TYPE_GYROSCOPE),
