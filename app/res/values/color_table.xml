@@ -6,4 +6,8 @@
 	<color name="blue">#5500FF</color>
 	<color name="pink">#FF0088</color>
 	<color name="b_blue">#007799</color>
+    <color name="chart_color_US">#576F86</color>
+    <color name="chart_color_JP">#E7655A</color>
+    <color name="chart_color_KR">#F6CE5D</color>
+    <color name="chart_color_Others">#BAE6FB</color>
 </resources>

@@ -13,7 +13,11 @@ public final class R {
     public static final class color {
         public static final int b_blue=0x7f040005;
         public static final int blue=0x7f040003;
-        public static final int button_color=0x7f040006;
+        public static final int button_color=0x7f04000a;
+        public static final int chart_color_JP=0x7f040007;
+        public static final int chart_color_KR=0x7f040008;
+        public static final int chart_color_Others=0x7f040009;
+        public static final int chart_color_US=0x7f040006;
         public static final int green=0x7f040000;
         public static final int pink=0x7f040004;
         public static final int red=0x7f040001;
@@ -36,27 +40,34 @@ public final class R {
         public static final int ic_launcher=0x7f020002;
     }
     public static final class id {
-        public static final int action_settings=0x7f090009;
-        public static final int button1=0x7f090006;
-        public static final int button2=0x7f090008;
-        public static final int editText1=0x7f090003;
-        public static final int editText2=0x7f090002;
-        public static final int textView1=0x7f090000;
-        public static final int textView2=0x7f090001;
-        public static final int textView3=0x7f090004;
-        public static final int textView4=0x7f090005;
-        public static final int textView5=0x7f090007;
+        public static final int action_settings=0x7f09000d;
+        public static final int button1=0x7f090009;
+        public static final int button2=0x7f09000a;
+        public static final int chart_line=0x7f09000c;
+        public static final int editText1=0x7f090006;
+        public static final int editText2=0x7f090008;
+        public static final int linearLayout1=0x7f090000;
+        public static final int textView1=0x7f090002;
+        public static final int textView2=0x7f090004;
+        public static final int textView3=0x7f090005;
+        public static final int textView4=0x7f090007;
+        public static final int textView5=0x7f09000b;
+        public static final int textView6=0x7f090001;
+        public static final int textView7=0x7f090003;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
+        public static final int page2=0x7f030001;
     }
     public static final class menu {
         public static final int main=0x7f080000;
+        public static final int main_activity2=0x7f080001;
     }
     public static final class string {
         public static final int action_settings=0x7f060002;
         public static final int app_name=0x7f060000;
         public static final int hello_world=0x7f060001;
+        public static final int title_activity_main_activity2=0x7f060003;
     }
     public static final class style {
         /** 
